@@ -40,7 +40,7 @@ func TestSimple(t *testing.T) {
 		}
 
 		if !bytes.Equal(val, []byte("val11")) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte("val11"), val)
+			t.Fatalf("Unexpected value: %s, expect: %s", val, []byte("val11"))
 		}
 	}
 
@@ -52,7 +52,7 @@ func TestSimple(t *testing.T) {
 		}
 
 		if !bytes.Equal(val, []byte("val2")) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte("val11"), val)
+			t.Fatalf("Unexpected value: %s, expect: %s", val, []byte("val11"))
 		}
 	}
 
@@ -83,7 +83,7 @@ func TestBatch(t *testing.T) {
 		fmt.Println("kvdb key1 get :", string(val))
 
 		if !bytes.Equal(val, []byte("val11")) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte("val11"), val)
+			t.Fatalf("Unexpected value: %s, expect: %s", val, []byte("val11"))
 		}
 	}
 
@@ -97,7 +97,7 @@ func TestBatch(t *testing.T) {
 		fmt.Println("kvdb key2 get :", string(val))
 
 		if !bytes.Equal(val, []byte("val2")) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte("val11"), val)
+			t.Fatalf("Unexpected value: %s, expect: %s", val, []byte("val11"))
 		}
 	}
 
@@ -121,7 +121,7 @@ func TestBatch(t *testing.T) {
 		fmt.Println("kvdb key4 get :", string(val))
 
 		if !bytes.Equal(val, []byte("val4")) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte("val4"), val)
+			t.Fatalf("Unexpected value: %s, expect: %s", val, []byte("val4"))
 		}
 	}
 }
@@ -165,11 +165,11 @@ func TestIterator(t *testing.T) {
 		fmt.Println(string(key), string(value))
 
 		if !bytes.Equal(key, []byte(key111)) {
-			t.Fatalf("Unexpected key want: %s, got %s", []byte(key111), key)
+			t.Fatalf("Unexpected key: %s, expect: %s", key, []byte(key111))
 		}
 
 		if !bytes.Equal(value, []byte(content3)) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte(content3), value)
+			t.Fatalf("Unexpected value: %s, expect: %s", value, []byte(content3))
 		}
 	}
 
@@ -186,11 +186,11 @@ func TestIterator(t *testing.T) {
 		fmt.Println(string(key), string(value))
 
 		if !bytes.Equal(key, []byte(key1111)) {
-			t.Fatalf("Unexpected key want: %s, got %s", []byte(key1111), key)
+			t.Fatalf("Unexpected key: %s, expect: %s", key, []byte(key1111))
 		}
 
 		if !bytes.Equal(value, []byte(content4)) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte(content4), value)
+			t.Fatalf("Unexpected value: %s, expect: %s", value, []byte(content4))
 		}
 	}
 
@@ -198,7 +198,7 @@ func TestIterator(t *testing.T) {
 		ok := iter.Next()
 
 		if ok {
-			t.Fatal("Next for iterator should be failed!")
+			t.Fatal("Next for iterator should fail!")
 		}
 	}
 
@@ -215,11 +215,11 @@ func TestIterator(t *testing.T) {
 		fmt.Println(string(key), string(value))
 
 		if !bytes.Equal(key, []byte(key1111)) {
-			t.Fatalf("Unexpected key want: %s, got %s", []byte(key1111), key)
+			t.Fatalf("Unexpected key: %s, expect: %s", key, []byte(key1111))
 		}
 
 		if !bytes.Equal(value, []byte(content4)) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte(content4), value)
+			t.Fatalf("Unexpected value: %s, expect: %s", value, []byte(content4))
 		}
 	}
 
@@ -236,11 +236,11 @@ func TestIterator(t *testing.T) {
 		fmt.Println(string(key), string(value))
 
 		if !bytes.Equal(key, []byte(key111)) {
-			t.Fatalf("Unexpected key want: %s, got %s", []byte(key111), key)
+			t.Fatalf("Unexpected key: %s, expect: %s", key, []byte(key111))
 		}
 
 		if !bytes.Equal(value, []byte(content3)) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte(content3), value)
+			t.Fatalf("Unexpected value: %s, expect: %s", value, []byte(content3))
 		}
 	}
 
@@ -248,7 +248,7 @@ func TestIterator(t *testing.T) {
 		ok := iter.Prev()
 
 		if ok {
-			t.Fatal("Prev for iterator should be failed!")
+			t.Fatal("Prev for iterator should fail!")
 		}
 	}
 
@@ -265,11 +265,11 @@ func TestIterator(t *testing.T) {
 		fmt.Println(string(key), string(value))
 
 		if !bytes.Equal(key, []byte(key111)) {
-			t.Fatalf("Unexpected key want: %s, got %s", []byte(key111), key)
+			t.Fatalf("Unexpected key: %s, expect: %s", key, []byte(key111))
 		}
 
 		if !bytes.Equal(value, []byte(content3)) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte(content3), value)
+			t.Fatalf("Unexpected value: %s, expect: %s", value, []byte(content3))
 		}
 	}
 
@@ -277,7 +277,7 @@ func TestIterator(t *testing.T) {
 		ok := iter.Prev()
 
 		if ok {
-			t.Fatal("Prev for iterator should be failed!")
+			t.Fatal("Prev for iterator should fail!")
 		}
 	}
 
@@ -294,11 +294,11 @@ func TestIterator(t *testing.T) {
 		fmt.Println(string(key), string(value))
 
 		if !bytes.Equal(key, []byte(key1111)) {
-			t.Fatalf("Unexpected key want: %s, got %s", []byte(key1111), key)
+			t.Fatalf("Unexpected key: %s, expect: %s", key, []byte(key1111))
 		}
 
 		if !bytes.Equal(value, []byte(content4)) {
-			t.Fatalf("Unexpected value want: %s, got %s", []byte(content4), value)
+			t.Fatalf("Unexpected value: %s, expect: %s", value, []byte(content4))
 		}
 	}
 
@@ -306,7 +306,7 @@ func TestIterator(t *testing.T) {
 		ok := iter.Next()
 
 		if ok {
-			t.Fatal("Next for iterator should be failed!")
+			t.Fatal("Next for iterator should fail!")
 		}
 	}
 
