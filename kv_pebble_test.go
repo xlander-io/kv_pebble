@@ -6,11 +6,11 @@ import (
 	"os"
 	"testing"
 
-	kv_interface "github.com/xlander-io/kv"
+	"github.com/xlander-io/kv"
 	"github.com/xlander-io/kv_pebble"
 )
 
-func newDB() kv_interface.KVDB {
+func newDB() kv.KVDB {
 	const db_path = "./kv_pebble_test.db"
 	os.RemoveAll(db_path)
 	kvdb, err := kv_pebble.NewDB(db_path)
@@ -63,7 +63,7 @@ func TestBatch(t *testing.T) {
 	defer kvdb.Close()
 
 	//batch test
-	b := kv_interface.NewBatch()
+	b := kv.NewBatch()
 	b.Put([]byte("key1"), []byte("val1"))
 	b.Put([]byte("key1"), []byte("val11"))
 	b.Put([]byte("key2"), []byte("val2"))

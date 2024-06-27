@@ -2,7 +2,7 @@ package kv_pebble
 
 import (
 	"github.com/cockroachdb/pebble"
-	kv_interface "github.com/xlander-io/kv"
+	"github.com/xlander-io/kv"
 )
 
 var Default_W_OP_TRUE = pebble.Sync
@@ -13,7 +13,7 @@ type KV_PEBBLE struct {
 	pebbledb *pebble.DB
 }
 
-func NewDB(db_path string) (kv_interface.KVDB, error) {
+func NewDB(db_path string) (kv.KVDB, error) {
 	level_db_, err := pebble.Open(db_path, nil)
 	if err != nil {
 		return nil, err
@@ -52,7 +52,7 @@ func (db *KV_PEBBLE) Get(key []byte) (value []byte, err error) {
 	return value, err
 }
 
-func (db *KV_PEBBLE) WriteBatch(batch *kv_interface.Batch, sync bool) error {
+func (db *KV_PEBBLE) WriteBatch(batch *kv.Batch, sync bool) error {
 	pebble_batch := db.pebbledb.NewBatch()
 	batch.Loop(func(key, val []byte) {
 		pebble_batch.Set(key, val, nil)
@@ -65,7 +65,7 @@ func (db *KV_PEBBLE) WriteBatch(batch *kv_interface.Batch, sync bool) error {
 	}
 }
 
-func (db *KV_PEBBLE) NewIterator(start []byte, limit []byte) kv_interface.Iterator {
+func (db *KV_PEBBLE) NewIterator(start []byte, limit []byte) kv.Iterator {
 	iter, err := db.pebbledb.NewIter(&pebble.IterOptions{LowerBound: start, UpperBound: limit})
 	if nil != err {
 		return nil

@@ -57,8 +57,8 @@ github.com/rogpeppe/go-internal v1.12.0 h1:exVL4IDcn6na9z1rAb56Vxr+CgyK3nn3O+epU
 github.com/rogpeppe/go-internal v1.12.0/go.mod h1:E+RYuTGaKKdloAfM02xzb0FW3Paa99yedzYV+kq4uf4=
 github.com/stretchr/testify v1.8.2 h1:+h33VjcLVPDHtOdpUCuF+7gSuG3yGIftsP1YvFihtJ8=
 github.com/stretchr/testify v1.8.2/go.mod h1:w2LPCIKwWwSfY2zedu0+kehJoqGctiVI29o6fzry7u4=
-github.com/xlander-io/kv v0.0.0-20240612131354-faf15072c970 h1:e3YU/uAOljwkJa5plsQ+bPCSvoA4UHSbGMqP4Wuqauk=
-github.com/xlander-io/kv v0.0.0-20240612131354-faf15072c970/go.mod h1:zHdcIiheasIMsUcHzymfKkrqAULIj1/Q2kkfb0+ARyw=
+github.com/xlander-io/kv v0.0.0-20240627123727-434d0569d2e2 h1:KHAHyCXiWyFBkMbpmXtMgB5tNUhP+8CjBBWyRWSYsiU=
+github.com/xlander-io/kv v0.0.0-20240627123727-434d0569d2e2/go.mod h1:Zb7e/Z1K3g8RjYptlUKP2h3R+iHHZF7Z03jPYFTYdN0=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
