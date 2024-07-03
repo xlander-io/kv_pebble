@@ -55,7 +55,11 @@ func (db *KV_PEBBLE) Get(key []byte) (value []byte, err error) {
 func (db *KV_PEBBLE) WriteBatch(batch *kv.Batch, sync bool) error {
 	pebble_batch := db.pebbledb.NewBatch()
 	batch.Loop(func(key, val []byte) {
-		pebble_batch.Set(key, val, nil)
+		if val == nil {
+			pebble_batch.Delete(key, nil)
+		} else {
+			pebble_batch.Set(key, val, nil)
+		}
 	})
 
 	if sync {

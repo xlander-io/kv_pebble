@@ -4,7 +4,7 @@ go 1.22.4
 
 require (
 	github.com/cockroachdb/pebble v1.1.0
-	github.com/xlander-io/kv v0.0.0-20240703034557-55f6c80848c6
+	github.com/xlander-io/kv v0.0.0-20240703070149-408f10396aaa
 
 )
 
